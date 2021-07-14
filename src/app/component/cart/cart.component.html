@@ -1,0 +1,27 @@
+<app-home></app-home>
+<div class="container is-flex is-flex-direction-column is-align-items-center	">
+    <h1 class="title is-2">Vôtre panier</h1>
+    <div class="box ">
+        <button (click)="deleteCart()" *ngIf="cart.length > 0"  style="float: right;" class="delete" aria-label="delete"></button>
+        <table class="table is-striped" >
+            <thead *ngIf="cart.length > 0" >
+                <th>Image</th>
+                <th>Product Description</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </thead>
+            <p style="width: 500px; text-align: center;" *ngIf="cart.length === 0">Vôtre panier est vide</p>
+            <tbody>
+                <tr *ngFor="let article of cart">
+                    <td><img width="40px" height="40px" src="{{article.picture}}"/></td>
+                    <td>{{article.description}}</td>
+                    <td>{{article.quantity}}</td>
+                    <td>{{article.price}}$</td>
+                    <td>{{article.price * article.quantity}}$</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<app-home></app-home>
+<h2 class="title is-1 has-text-centered	">Liste des Articles</h2>
+<div class="container is-flex is-justify-content-space-between is-flex-wrap-wrap">
+    <hr>
+        <div style="height: 180px;" class="column is-4"  *ngFor="let product of products" >
+            <app-article [article]="product" ></app-article>
+        </div>
+      
+</div>

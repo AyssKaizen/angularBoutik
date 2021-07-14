@@ -1,0 +1,15 @@
+<app-home></app-home>
+<div class="container">
+    <div style="width: 500px; height: 300px; margin: 100px auto;" class="box ">
+        <button routerLink="/articles" style="float: right;" class="delete" aria-label="delete"></button>
+        
+            <img style="float: right;" width="150px" height="100px" src="{{article.picture}}" alt=""/>
+            <h5 class="title is-4">{{article.label}}</h5>
+            <ul>
+                <li style="margin-bottom: 10px;">prix: {{article.price}} </li>
+                <li>poids: {{article.weight}}g</li>
+                <li >description: <br> {{article.description}}</li>
+            </ul>
+            <button style="float: right; margin-top: 20px;"  class="button is-primary is-large">Ajouter au panier</button>
+    </div>
+</div>

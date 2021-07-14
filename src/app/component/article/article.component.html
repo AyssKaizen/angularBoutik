@@ -1,0 +1,11 @@
+<div class="box pb-2">
+    <div style="width: 20px; height: 20px; background-color: red; float: right; border-radius: 100%;" *ngIf="!article.stock"></div>
+    <button class="button is-primary is-light is-small" routerLink="/fiche" style=" font-size: 9px; float: right;" *ngIf="article.stock">voir la fiche</button>
+    <img style="float: right;" width="100px" height="100px" *ngIf="article.picture != '' " src="{{article.picture}}" alt=""/>
+    <h5 class="title is-4">{{article.label}}</h5>
+    <ul>
+        <li style="margin-bottom: 10px;">prix: {{article.price}}$</li>
+        <span style="font-size: 10px;">{{article.stock ? 'en stock' : 'rupture de stock'}}</span>
+    </ul>
+    <button (click)="onClickAdd()" [disabled]="!article.stock" class="button is-primary is-small">Ajouter au panier</button>
+</div>
